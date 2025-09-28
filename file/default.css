@@ -3,84 +3,159 @@ body {
   padding: 0;
   background-image: url('../img2.png');
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   font-size: 14px;
   font-family: sans-serif;
   color: white;
-  overflow: auto;
+  overflow-x: hidden;
 }
+
 a {
   color: white;
   font-size: 14px;
 }
+
 #main {
   width: 100%;
 }
+
 #wrap {
   position: relative;
-  margin: 0 auto;
-  width: 1100px;
-  height: 680px;
-  margin-top: 10px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  min-height: 500px;
+  padding: 10px;
 }
+
 #text {
-  width: 272px;
-  height: 560px;
-  left: 188px;
-  top: 80px;
   position: absolute;
+  width: 25%;
+  max-width: 272px;
+  min-width: 200px;
+  left: 15%;
+  top: 80px;
 }
+
 #code {
   display: none;
   color: rgb(196, 255, 255);
-  font-size: 16px;
+  font-size: 1rem;
   margin-top: 70px;
-  line-height: 25px;
-  font-size: larger;
-  font-weight: bolder;
+  line-height: 1.5rem;
+  font-weight: bold;
 }
+
 #clock-box {
   position: absolute;
-  left: 60px;
-  top: 550px;
-  font-size: 28px;
+  left: 5%;
+  bottom: 20px;
+  font-size: 1.5rem;
   display: none;
 }
+
 #clock-box a {
-  font-size: 28px;
+  font-size: 1.5rem;
   text-decoration: none;
 }
+
 #clock {
-  margin-left: 48px;
+  margin-left: 20px;
 }
+
 #clock .digit {
-  font-size: 64px;
+  font-size: 2.5rem;
 }
+
 #canvas {
   margin: 0 auto;
-  width: 1100px;
-  height: 680px;
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
 }
+
 #error {
   margin: 0 auto;
   text-align: center;
   margin-top: 60px;
   display: none;
 }
+
 .hand {
   cursor: pointer;
 }
+
 .say {
   margin-left: 5px;
 }
+
 .space {
-  margin-right: 150px;
+  margin-right: 5%;
 }
 
-#message-box{
+#message-box {
   position: absolute;
-  margin-top:450px;
-  font-size: 25px;
+  bottom: 50px;
+  font-size: 1.2rem;
   font-family: monospace;
+  width: 100%;
+  text-align: center;
+}
 
+/* --- Responsive Breakpoints --- */
+
+/* Tablets */
+@media (max-width: 768px) {
+  #wrap {
+    padding: 10px;
+  }
+  #text {
+    width: 40%;
+    left: 5%;
+    top: 60px;
+  }
+  #clock-box {
+    font-size: 1.2rem;
+    left: 10px;
+    bottom: 15px;
+  }
+  #clock .digit {
+    font-size: 2rem;
+  }
+  #message-box {
+    font-size: 1rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  #wrap {
+    padding: 5px;
+  }
+  #text {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    left: 0;
+    top: 20px;
+    text-align: center;
+  }
+  #clock-box {
+    position: relative;
+    left: 0;
+    bottom: auto;
+    margin-top: 20px;
+    text-align: center;
+  }
+  #clock .digit {
+    font-size: 1.5rem;
+  }
+  #message-box {
+    position: relative;
+    margin-top: 20px;
+    bottom: auto;
+    font-size: 1rem;
+  }
 }
